@@ -76,3 +76,28 @@ lines((mass_Gt) ~ decimal_date, data=grn_ice_loss_with_NA, lwd =2, col="red")
 lines((mass_Gt + 2*sigma_Gt) ~ decimal_date, data = grn_ice_loss_with_NA, lty = "dashed")
 lines((mass_Gt - 2*sigma_Gt) ~ decimal_date, data = grn_ice_loss_with_NA, lty = "dashed")
 dev.off() #closes pdf
+
+
+### Exercise 1.1
+
+min(ant_ice_loss$mass_Gt)
+
+
+# Barplot of largest observed ice loss in Antarctica and Greenland
+barplot(height=c(min(ant_ice_loss$mass_Gt)*(-1), min(grn_ice_loss$mass_Gt)*(-1)), names.arg = c("Antartica", "Greenland"), ylim=c(0,6000), ylab="Ice loss in Gt")
+
+
+### Exercise 1.2
+
+avg_ice_loss_ant=((ant_ice_loss_with_NA$mass_Gt[1]-ant_ice_loss_with_NA$mass_Gt[237])/max(ant_ice_loss_with_NA$decimal_date))
+avg_ice_loss_ant
+
+avg_ice_loss_grn=((grn_ice_loss_with_NA$mass_Gt[1]-grn_ice_loss_with_NA$mass_Gt[237])/max(grn_ice_loss_with_NA$decimal_date))
+avg_ice_loss_grn
+## barplot
+barplot(height=c(avg_ice_loss_ant, avg_ice_loss_grn), names.arg = c("Antartica", "Greenland"), ylim = c(0,4), ylab="Average Ice loss in Gt")
+
+pdf('figures/melting_ice_barplot.pdf')
+barplot(height=c(avg_ice_loss_ant, avg_ice_loss_grn), names.arg = c("Antartica", "Greenland"), ylim = c(0,4), ylab="Average Ice loss in Gt")
+dev.off()
+      
