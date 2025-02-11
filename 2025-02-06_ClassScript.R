@@ -126,3 +126,13 @@ for(i in seq(dim(mat)[1])){
   }
 }
 mat_sq
+
+#while loops
+
+x=1
+while(x>0){
+  x = x+1
+}
+
+## 4.1 Practice
+
