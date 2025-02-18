@@ -98,3 +98,5 @@ lines(avg_20_yr ~ Year, data= temp_anomaly, col="pink", lwd = 3)
 abline(v = 1998, lty="dashed")
 abline (v =2013, lty = "dashed")
 lines(c(temp_1998, temp_2012) ~ c(1998, 2012), col="blue", lwd=3)
+
+#source("scripts/my_functions.r") - sources functions from other scripts
